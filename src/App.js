@@ -43,7 +43,7 @@ function App() {
       setErrorMessage('Failed to fetch weather data. Please check the city name.');
     }
   };
-
+// eslint-disable-next-line
   useEffect(() => {
     fetchWeatherData();
   }, []);
