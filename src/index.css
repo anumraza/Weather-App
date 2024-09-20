@@ -67,7 +67,7 @@ h1 {
 
 .app .top {
   margin: 1rem auto;
-  /* flex: 1; */
+  flex: 1;
   height: 20px;
 }
 
