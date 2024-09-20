@@ -8,13 +8,15 @@
 
 body {
   height: 100vh;
-  overflow: hidden; /* Allow vertical scrolling if necessary */
+  overflow: hidden; /* Prevent scroll */
   background-image: url("./assets/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   animation: move-background 350s linear infinite;
   font-family: "Outfit", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes move-background {
@@ -27,14 +29,15 @@ body {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 4vw; /* Responsive heading for all screens */
 }
 
 .app {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: space-between;
-  min-height: 100vh; /* Ensure it takes the full viewport height */
+  height: 100vh;
   background-color: rgba(60, 58, 58, 0.3);
   color: #572a2a;
 }
@@ -45,9 +48,9 @@ h1 {
 }
 
 .app input {
-  padding: 0.7rem 1.5rem;
+  padding: 0.5rem 1rem;
   font-size: 1.2rem;
-  border-radius: 25px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   background: rgba(63, 60, 60, 0.7);
   color: #f8f8f8;
@@ -58,62 +61,20 @@ h1 {
 }
 
 .container {
-  flex: 1;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
   padding: 0 1rem;
 }
 
 .app .top {
-  margin: 1rem auto;
-  flex: 1;
-}
-
-.app .description {
-  position: relative;
-  right: -90%;
-  transform-origin: 0 0;
-  transform: rotate(269deg);
-  /* float: right; */
+  margin: 1rem 0;
+  text-align: center;
 }
 
 .bold {
   font-weight: 500;
-}
-
-.hourly-container {
-  overflow-x: auto;
-  margin-top: 10px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: nowrap;
-  width: 100%;
-  scroll-behavior: smooth;
-}
-@media (max-width: 600px) {
-  .hourly-container {
-    margin-top: 0;
-    padding: 8px;
-  }
-
-  .app .top {
-    margin: 0 auto;
-  }
-}
-.hourly-box {
-  min-width: 100px;
-  max-width: 120px;
-  background-color: rgba(68, 68, 68, 0.4);
-  color: white;
-  border-radius: 10px;
-  border: 1px solid rgb(77, 75, 75);
-  text-align: center;
-  padding: 10px;
-  margin: 5px;
-  flex-shrink: 0;
 }
 
 .temp {
@@ -123,45 +84,69 @@ h1 {
 }
 
 .temp h1 {
-  font-size: 3rem;
+  font-size: 10vw; /* Adjust to scale with screen size */
   margin: 0;
 }
 
 .temp p {
-  font-size: 1.5rem;
+  font-size: 4vw; /* Adjust description size */
   margin: 0;
+}
+
+/* Scrollable hourly container */
+.hourly-container {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  margin-top: 10px;
+  padding: 10px;
+  flex-wrap: nowrap; /* Keep horizontal layout */
+  width: 100%;
+}
+
+.hourly-box {
+  min-width: 80px;
+  max-width: 100px;
+  background-color: rgba(68, 68, 68, 0.4);
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  flex-shrink: 0;
+  font-size: 3vw; /* Scales with screen size */
 }
 
 .hourly-p {
   font-size: 1rem;
 }
 
+/* Bottom container for extra info */
 .app .bottom {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: center;
-  margin: 1rem auto;
+  margin: 1rem 0;
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.35);
-  width: 50%;
 }
 
 .bottom-p {
-  font-size: 1.4rem;
+  font-size: 2.5vw; /* Scales with screen size */
   font-weight: 100;
   color: rgb(223, 208, 208);
 }
 
 @media (max-width: 600px) {
+  /* Adjust bottom section for smaller screens */
   .app .bottom {
-    width: 290px;
-    margin-bottom: 30px;
-    padding: 5px 5px;
+    margin-bottom: 10px;
+    padding: 0.5rem;
   }
 
   .bottom-p {
-    font-size: 1rem;
-    font-weight: 100;
+    font-size: 3vw; /* Further reduce text size for very small screens */
   }
 }
