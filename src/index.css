@@ -36,7 +36,7 @@ h1 {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 100vh;
   background-color: rgba(60, 58, 58, 0.3);
   color: #572a2a;
@@ -127,9 +127,10 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
-  margin: 1rem 0;
+  margin: 2rem;
   padding: 1rem;
   border-radius: 12px;
+  /* margin-bottom: 30px; */
   background-color: rgba(255, 255, 255, 0.35);
 }
 
@@ -142,7 +143,7 @@ h1 {
 @media (max-width: 600px) {
   /* Adjust bottom section for smaller screens */
   .app .bottom {
-    margin-bottom: 10px;
+    margin-bottom: 70px;
     padding: 0.5rem;
   }
 
