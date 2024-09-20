@@ -8,7 +8,7 @@
 
 body {
   height: 100vh;
-  overflow: auto; /* Allow vertical scrolling if necessary */
+  overflow: hidden; /* Allow vertical scrolling if necessary */
   background-image: url("./assets/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -75,6 +75,7 @@ h1 {
   right: -90%;
   transform-origin: 0 0;
   transform: rotate(269deg);
+  float: right;
 }
 
 .bold {
