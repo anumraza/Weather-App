@@ -125,7 +125,7 @@ function App() {
       </div>
 
       {showErrorModal && (
-        <Modal message={errorMessage} onClose={handleCloseModal} />
+        <Modal message={errorMessage} onClose={handleCloseModal} onKeyDown={handleCloseModal} />
       )}
     </div>
   );

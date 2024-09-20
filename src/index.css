@@ -9,15 +9,12 @@
 body {
   margin: 0;
   overflow: hidden; /* Prevent scrollbars from appearing */
-}
-
-.moving-background {
   position: relative;
   height: 100vh; /* Full viewport height */
   background-image: url("./assets/background.jpg");
   background-size: cover; /* Ensures the image covers the entire background */
   background-repeat: no-repeat;
-  animation: move-background 60s linear infinite; /* Adjust the duration as needed */
+  animation: move-background 350s linear infinite; /* Adjust the duration as needed */
 }
 
 @keyframes move-background {
@@ -48,13 +45,12 @@ h1 {
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  background-color: rgba(60, 58, 58, 0.3);
+  color: #572a2a;
 }
 
 .app:before {
   content: "";
-  background: url("./assets/background.jpg") no-repeat center center/cover;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -73,7 +69,7 @@ h1 {
   font-size: 1.2rem;
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(63, 60, 60, 0.7);
   color: #f8f8f8;
 }
 
@@ -83,6 +79,7 @@ h1 {
 
 .city-name {
   text-align: center;
+  color: rgb(67, 67, 67);
 }
 
 .container {
@@ -117,7 +114,7 @@ h1 {
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 .bold {
@@ -131,29 +128,65 @@ h1 {
   padding: 10px;
   width: 100%;
   scroll-behavior: smooth;
-  justify-content: flex-start; /* Align boxes to the left */
+  justify-content: flex-start;
 }
 
+.hourly-container {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically (if needed) */
+  flex-wrap: wrap; /* Wrap items if they exceed the container width */
+  width: 100%; /* Full width */
+}
+
+/* Styles for hourly boxes */
 .hourly-box {
-  min-width: 100px; /* Ensure each box has a minimum width */
-  max-width: 120px; /* Set a maximum width to avoid oversized boxes */
-  background-color: rgba(68, 68, 68, 0.5);
+  min-width: 100px; /* Minimum width for each box */
+  max-width: 120px; /* Maximum width to avoid oversized boxes */
+  background-color: rgba(68, 68, 68, 0.4);
   color: white;
   border-radius: 10px;
+  border: 1px solid rgb(77, 75, 75);
   text-align: center;
   padding: 10px;
-  margin-right: 10px; /* Space between boxes */
+  margin: 10px; /* Space between boxes */
   flex-shrink: 0; /* Prevent shrinking */
 }
 
-.hourly-p {
-  font-size: 1.2rem;
-  font-weight: lighter;
+/* Media query for wide screens */
+@media (min-width: 1200px) {
+  /* Adjust the min-width as needed */
+  .hourly-container {
+    justify-content: space-around; /* Distribute space evenly */
+    padding: 0 20px; /* Optional padding on the sides */
+  }
+
+  .hourly-box {
+    flex: 1; /* Allow boxes to grow equally */
+    max-width: 120px; /* Keep max width for each box */
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .hourly-container {
+    padding: 0 10px; /* Equal padding on the sides */
+  }
+
+  .hourly-box {
+    flex: 1 1 100px; /* Allow boxes to grow/shrink with a minimum width */
+  }
+}
+
+.hourly-box p {
+  font-weight: 100;
+  font-size: 1.3rem;
 }
 
 .bottom-p {
   font-size: 1.3rem;
   font-weight: 300;
+  color: rgb(223, 208, 208);
 }
 
 .temp {
