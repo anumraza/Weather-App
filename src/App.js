@@ -68,7 +68,7 @@ function App() {
   };
 
   return (
-    <div className="app moving-background">
+    <div className="app ">
       <div className="search">
         <input
           value={location}
