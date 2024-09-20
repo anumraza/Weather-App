@@ -59,7 +59,7 @@ h1 {
 
 .container {
   flex: 1;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
   padding: 0 1rem;
@@ -67,7 +67,8 @@ h1 {
 
 .app .top {
   margin: 1rem auto;
-  flex: 1;
+  /* flex: 1; */
+  height: 20px;
 }
 
 .app .description {
